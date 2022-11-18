@@ -1,0 +1,38 @@
+.my-info {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 5rem 0;
+  gap: 0.5rem;
+  align-items: center;
+
+  .my-info-text-container {
+    flex: 1 0 60%;
+
+    .my-info__name {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .my-info__role {
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+  }
+
+
+  .my-info-img-container {
+    flex: 0 1 8.5rem;
+    background-color: var(--dark-contrast-crimson);
+    border-radius: 50%;
+    padding: 0.2rem;
+
+    .my-info__img {
+      display: block;
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+      height: 8.5rem;
+    }
+  }
+
+}
