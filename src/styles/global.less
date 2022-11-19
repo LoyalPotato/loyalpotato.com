@@ -2,14 +2,8 @@
 @import "./helpers.less";
 
 :root {
-  --accent: 124, 58, 237;
-  --accent-gradient: linear-gradient(45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
-      white 60%);
   --font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-
   --code-font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
     DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 
@@ -17,7 +11,9 @@
    Colors
    */
 
+  /* Dark Mode */
   --smooth-black: #202023;
+  --dark-bg: var(--smooth-black);
 
   --dark-blue-step-1: #0D1B2A;
   --dark-blue-step-2: #1B263B;
@@ -28,30 +24,52 @@
   --dark-contrast-orange: #DA7422;
   --dark-contrast-crimson: #6F1D1B;
 
-  --background: var(--smooth-black);
-  --text-color: var(--dark-contrast-white);
+  /* Light Mode */
+
+  --light-yellow: #FFFBDB;
+  --light-bg: var(--light-yellow);
+
+  --pine-tree: #30362F;
+  --gold: #A59132;
 
   /* Border */
 
   --border-radius: 0.6rem;
 }
 
-@media (prefers-color-scheme: light) {}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  &::selection {
-    background: var(--dark-blue-step-4);
-  }
 }
 
 html {
   font-family: var(--font-family);
   background-color: var(--background);
   text-rendering: optimizeLegibility;
+
+  &:root {
+    --background: var(--light-yellow);
+    --text-color: var(--pine-tree);
+    --contrast-color: var(--pine-tree);
+    --contrast-color-light: var(--gold);
+  }
+
+  *::selection {
+    background: var(--gold);
+  }
+}
+
+html.dark {
+  &:root {
+    --background: var(--smooth-black);
+    --text-color: var(--dark-contrast-white);
+    --contrast-color: var(--dark-contrast-crimson);
+  }
+
+  *::selection {
+    background: var(--dark-blue-step-4);
+  }
 }
 
 body {
@@ -66,6 +84,7 @@ code {
 .center-wrapper {
   margin: auto;
   padding: 1.5rem;
+  padding-top: 0;
   max-width: 1000px;
 }
 
@@ -84,4 +103,5 @@ code {
 
 p {
   letter-spacing: 0.05rem;
+  line-height: 1.4rem;
 }
