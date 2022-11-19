@@ -1,0 +1,12 @@
+---
+import "./LinkableTitle.less";
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+---
+
+<h1 id={id}>
+  <slot />
+  <a class="linkable-section" href={`#${id}`}>#</a>
+</h1>
