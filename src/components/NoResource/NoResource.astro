@@ -1,0 +1,13 @@
+---
+import "./NoResource.less";
+
+interface Props {
+  resourceType: string;
+}
+
+const { resourceType } = Astro.props;
+---
+
+<div class="no-resource-container">
+  <h2>No {resourceType} yet :&rpar;</h2>
+</div>
