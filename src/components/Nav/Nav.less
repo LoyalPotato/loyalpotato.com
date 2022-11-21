@@ -3,8 +3,7 @@
   display: flex;
   align-items: center;
   flex-flow: row;
-  gap: 1rem;
-  padding-top: 2rem;
+  gap: 0.5rem;
   backdrop-filter: blur(5px);
   top: 0;
   height: 5rem;
@@ -18,6 +17,7 @@
     border-radius: var(--border-radius);
 
     a {
+      transition: all 200ms ease-in-out;
       text-decoration: none;
       color: var(--text-color);
       font-weight: 900;
@@ -30,7 +30,11 @@
     }
 
     &:hover {
-      background-color: var(--dark-contrast-crimson);
+      a {
+        color: white;
+      }
+
+      background-color: var(--contrast-color);
     }
   }
 
