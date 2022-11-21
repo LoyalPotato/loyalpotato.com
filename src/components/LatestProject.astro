@@ -1,0 +1,11 @@
+---
+import LinkableTitle from "./LinkableTitle/LinkableTitle.astro";
+import NoResource from "./NoResource/NoResource.astro";
+
+const projects = await Astro.glob("../pages/projects/*.md");
+---
+
+<div>
+  <LinkableTitle id="latestProject">Latest Project</LinkableTitle>
+  {projects.length === 1 && <NoResource resourceType="projects" />}
+</div>
