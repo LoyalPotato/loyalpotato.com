@@ -1,0 +1,44 @@
+---
+import LinkableTitle from "../LinkableTitle/LinkableTitle.astro";
+import Experience from "./Experience.astro";
+---
+
+<div class="experiences-container">
+  <LinkableTitle id="experiences" extraTitleClass="experiences__title"
+    >Experiences</LinkableTitle
+  >
+  <Experience
+    company="Learninghubz"
+    position="Full Stack Engineer"
+    dateStart={new Date(2020, 7, 24)}
+    dateEnd="present"
+    techStacks={[
+      "React",
+      "TypeScript",
+      "AngularJS",
+      "Ionic",
+      ".NET",
+      "C#",
+      "Azure",
+      "NoSQL/CosmosDB",
+    ]}
+  >
+    <div slot="description">
+      <p>
+        First professional experience working as a full stack engineer. Small
+        team, working as the sole programmer for frontend & backend 6 months
+        after starting until present day.
+      </p>
+      <p>
+        Dealt with improving and fixing a content curation platform for
+        companies with thousands of employees. Includes, but not limited to,
+        integrations with other services, such as YouTube and Vimeo, content
+        management, dashboards. Application is built with AngularJS.
+      </p>
+      <p>
+        Architect and manage application for learning management, built with
+        React.
+      </p>
+    </div>
+  </Experience>
+</div>

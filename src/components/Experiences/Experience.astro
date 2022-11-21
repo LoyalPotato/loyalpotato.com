@@ -1,0 +1,48 @@
+---
+import "./Experience.less";
+interface Props {
+  company: string;
+  dateStart: Date;
+  dateEnd: Date | string;
+  position: string;
+  techStacks: string[];
+}
+
+const { company, position, dateStart, dateEnd, techStacks } = Astro.props;
+const timeFormat: Intl.DateTimeFormatOptions = {
+  month: "2-digit",
+  year: "2-digit",
+};
+const isDateEndString = typeof dateEnd === "string";
+---
+
+<div class="experience">
+  <h3 class="experience__title">{position}</h3>
+  <p class="experience__subtitle">{company}</p>
+  <div class="experience__subtitle experience__subtitle--time">
+    <time datetime={dateStart.toISOString()}
+      >{dateStart.toLocaleDateString(undefined, timeFormat)}</time
+    >
+    <span>-</span>
+    <time datetime={(isDateEndString ? new Date() : dateEnd).toISOString()}
+      >{
+        isDateEndString
+          ? dateEnd
+          : dateEnd.toLocaleDateString(undefined, timeFormat)
+      }</time
+    >
+  </div>
+  <div class="experience__description">
+    <slot name="description" />
+  </div>
+  <p class="experience__techs">
+    Tech stacks: {
+      techStacks.map((ts, idx) => {
+        if (idx === techStacks.length - 1) {
+          return ts;
+        }
+        return ts + ", ";
+      })
+    }
+  </p>
+</div>
