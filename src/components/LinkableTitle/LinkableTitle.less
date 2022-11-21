@@ -1,12 +1,17 @@
-* {
+.linkable-title {
+  font-size: 1.6rem;
+
   .linkable-section {
     color: gray;
     transition: opacity 200ms ease-in-out;
     opacity: 0;
+    font-size: 1.4rem;
   }
 
   &:hover {
-    opacity: 1;
+    .linkable-section {
+      opacity: 1;
+    }
   }
 
 }
