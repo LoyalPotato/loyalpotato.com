@@ -1,0 +1,27 @@
+---
+import Experiences from "../components/Experiences/Experiences.astro";
+import PageHeader from "../components/PageHeader/PageHeader.astro";
+import Layout from "../layouts/Layout.astro";
+import "../styles/about.less";
+---
+
+<Layout>
+  <main>
+    <PageHeader title="About me" />
+    <p>Like I said in the homepage, my name is David/LoyalPotato.</p>
+    <div class="about-img-container">
+      <img class="about__img" src="/images/profile_human.png" alt="Me" />
+    </div>
+    <p>
+      I'm a software engineer who's curious about all sorts of things, a
+      keyboard "enthusiast" (I like keyboards but I'm not crazy about 'em). I
+      also like playing video games, even though I haven't played many different
+      ones these past years (I've been playing mostly Halo Infinite on PC).
+    </p>
+    <p>
+      I occasionally like to draw as well, but much like gaming, I do it way
+      less than before, sadly :(
+    </p>
+    <Experiences />
+  </main>
+</Layout>
