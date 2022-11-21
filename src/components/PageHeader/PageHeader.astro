@@ -1,0 +1,15 @@
+---
+import "./PageHeader.less";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<header>
+  <h1 class="title">{title}</h1>
+  {subtitle && <h2 class="subtitle">{subtitle}</h2>}
+</header>
