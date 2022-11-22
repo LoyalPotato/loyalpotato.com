@@ -10,32 +10,25 @@
   min-width: 8rem;
 
 
-  .nav-item {
-    background-color: transparent;
-    transition: all 200ms ease-in-out;
-    padding: 0.5rem;
+
+  a {
     border-radius: var(--border-radius);
-
-    a {
-      transition: all 200ms ease-in-out;
-      text-decoration: none;
-      color: var(--text-color);
-      font-weight: 900;
-      text-transform: uppercase;
-
-    }
+    padding: 0.5rem;
+    transition: all 200ms ease-in-out;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 900;
+    text-transform: uppercase;
 
     &:first-child {
       margin-right: auto;
     }
 
     &:hover {
-      a {
-        color: white;
-      }
-
+      color: white;
       background-color: var(--contrast-color);
     }
   }
+
 
 }
