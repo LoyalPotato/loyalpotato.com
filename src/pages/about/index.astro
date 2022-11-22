@@ -2,6 +2,7 @@
 import { Image } from "@astrojs/image/components";
 import profilePic from "../../assets/images/profile_human.png";
 import Experiences from "../../components/Experiences/Experiences.astro";
+import LinkBtn from "../../components/LinkBtn/LinkBtn.astro";
 import PageHeader from "../../components/PageHeader/PageHeader.astro";
 import Layout from "../../layouts/Layout.astro";
 
@@ -30,7 +31,15 @@ import "./about.less";
       > and I occasionally like to draw as well, but much like gaming, I do it way
       less than before, sadly :(
     </p>
-    <p></p>
+    <p>
+      You can find my Github <LinkBtn
+        link="https://github.com/LoyalPotato"
+        linkText="here"
+      /> and my LinkedIn profile <LinkBtn
+        link="https://www.linkedin.com/in/dbazilio/"
+        linkText="here"
+      />.
+    </p>
     <Experiences />
   </main>
 </Layout>
