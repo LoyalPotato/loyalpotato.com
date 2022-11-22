@@ -1,0 +1,12 @@
+---
+import "./LinkBtn.less";
+
+interface Props {
+  link: string;
+  linkText: string;
+}
+
+const { link, linkText } = Astro.props;
+---
+
+<a class="link-btn" href={link}>{linkText}</a>
