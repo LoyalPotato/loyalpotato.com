@@ -1,11 +1,12 @@
 .link-btn {
-  color: var(--text-color);
   text-underline-offset: 0.3rem;
   text-decoration-color: var(--contrast-color);
-  text-decoration: underline 0.1rem;
+  text-decoration: underline 0.1rem var(--contrast-color);
   transition: all 150ms ease-in;
+  color: var(--text-color);
 
   &:hover {
     color: var(--selection);
+    text-decoration-color: var(--selection);
   }
 }
