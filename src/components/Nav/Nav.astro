@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from "../ThemeToggle/ThemeToggle.astro";
+import "./Nav.less";
 ---
 
 <nav class="nav">
@@ -9,35 +10,3 @@ import ThemeToggle from "../ThemeToggle/ThemeToggle.astro";
   <a href="/about">About Me 🥔</a>
   <ThemeToggle />
 </nav>
-
-<style>
-  .nav {
-    position: sticky;
-    display: flex;
-    align-items: center;
-    flex-flow: row;
-    gap: 0.5rem;
-    backdrop-filter: blur(5px);
-    top: 0;
-    height: 5rem;
-    min-width: 8rem;
-  }
-
-  .nav a {
-    border-radius: var(--border-radius);
-    padding: 0.5rem;
-    transition: all 200ms ease-in-out;
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 900;
-    text-transform: uppercase;
-  }
-  .nav a:hover {
-    color: white;
-    background-color: var(--contrast-color);
-  }
-
-  .nav a:first-child {
-    margin-right: auto;
-  }
-</style>
