@@ -1,6 +1,7 @@
 ---
 import LatestPosts from "../components/LatestPosts/LatestPosts.astro";
 import LatestProject from "../components/LatestProject.astro";
+import LinkBtn from "../components/LinkBtn/LinkBtn.astro";
 import PageHeader from "../components/PageHeader/PageHeader.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -12,8 +13,16 @@ import Layout from "../layouts/Layout.astro";
       I go by LoyalPotato online, but my real name is David. Either is fine :)
     </p>
     <p>
-      Here you'll find things about me, all my current and past projects and
-      some posts about whatever I find interesting in sharing.
+      Here you'll find what I'm working on and have worked on, all my <LinkBtn
+        link="/projects"
+        linkText="projects"
+      /> and some <LinkBtn link="/posts" linkText="posts" /> about what I find interesting
+      in all sorts of topics, such as Typescript, React, C# and others
+      <small>(but at the moment none exist)</small>.
+    </p>
+    <p>
+      If you want to know about my experiences and a little more about me check
+      <LinkBtn link="/about" linkText="here" />.
     </p>
     <LatestPosts />
     <LatestProject />
