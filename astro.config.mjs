@@ -8,7 +8,7 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ltato-io.vercel.app/",
+  site: "https://loyalpotato.dev/",
   integrations: [
     sitemap(),
     image({
