@@ -1,6 +1,16 @@
 ---
 import Nav from "../components/Nav/Nav.astro";
 import "../styles/global.less";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const title = Astro.props.title || "LoyalPotato's lair";
+const description =
+  Astro.props.description ||
+  "LoyalPotato's posts about all sorts of things like TypeScript, JavaScript, other web related techs and some random topics as well. Besides posts you can also find what projects he's up to :)";
 ---
 
 <!DOCTYPE html>
@@ -9,15 +19,12 @@ import "../styles/global.less";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="LoyalPotato's posts about all sorts of things like TypeScript, JavaScript, other web related techs and some random topics as well. Besides posts you can also find what projects he's up to :)"
-    />
+    <meta name="description" content={description} />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <title>LoyalPotato's lair</title>
+    <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
