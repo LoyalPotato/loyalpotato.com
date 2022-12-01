@@ -1,16 +1,6 @@
 #theme-toggle {
-  transition: all 200ms ease-in-out;
-  cursor: pointer;
-  background-color: var(--dark-bg);
-  border-radius: var(--border-radius);
   width: 2.15rem;
   height: 2.15rem;
-  padding: 0.1rem;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  border: none;
 
   .theme-icon {
     width: 1.4rem;
@@ -25,8 +15,6 @@
   }
 
   &:hover {
-    background-color: var(--contrast-color-light);
-
     .moon {
       fill: var(--dark-bg);
     }
@@ -36,8 +24,6 @@
 .dark {
 
   #theme-toggle {
-    background-color: var(--light-bg);
-
     .sun {
       fill: var(--background);
     }
@@ -47,8 +33,6 @@
     }
 
     &:hover {
-      background-color: var(--contrast-color);
-
       .sun {
         fill: var(--light-bg);
       }
