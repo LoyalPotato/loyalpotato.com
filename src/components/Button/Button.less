@@ -1,0 +1,30 @@
+.custom-btn {
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  background-color: var(--dark-bg);
+  border-radius: var(--border-radius);
+  // width: 2.15rem;
+  // height: 2.15rem;
+  padding: 0.1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border: none;
+
+  &:hover {
+    background-color: var(--contrast-color-light);
+  }
+}
+
+.dark .custom-btn {
+  background-color: var(--light-bg);
+
+  &:hover {
+    background-color: var(--contrast-color);
+
+    .sun {
+      fill: var(--light-bg);
+    }
+  }
+}

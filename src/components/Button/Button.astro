@@ -1,0 +1,20 @@
+---
+import "./Button.less";
+interface Props {
+  text?: string;
+  extraClasses?: string;
+  ariaLabel: string;
+  id?: string;
+}
+
+const { id, ariaLabel, text, extraClasses } = Astro.props;
+---
+
+<button
+  id={id}
+  aria-label={ariaLabel}
+  class:list={["custom-btn", extraClasses]}
+>
+  {text}
+  <slot name="icon" />
+</button>
