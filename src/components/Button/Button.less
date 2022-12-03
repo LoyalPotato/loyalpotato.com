@@ -10,19 +10,23 @@
   align-items: center;
   border: none;
 
-  &:hover {
-    background-color: var(--contrast-color-light);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--contrast-color-light);
+    }
   }
 }
 
 .dark .custom-btn {
   background-color: var(--light-bg);
 
-  &:hover {
-    background-color: var(--contrast-color) !important;
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--contrast-color) !important;
 
-    .sun {
-      fill: var(--light-bg);
+      .sun {
+        fill: var(--light-bg);
+      }
     }
   }
 }
