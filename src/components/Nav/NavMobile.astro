@@ -19,23 +19,4 @@ import Button from "../Button/Button.astro";
   </svg>
 </Button>
 
-<script>
-  const navLinks = document.querySelector(".nav-links");
-  const navBurger = document.getElementById("nav-burger");
-  const onNavClick = () => {
-    if (navLinks) {
-      navLinks.classList.toggle("expanded");
-    }
-  };
-  const onDocClick = (e) => {
-    if (!navLinks || !navBurger || navBurger.contains(e.target)) return;
-    if (!navLinks.contains(e.target)) {
-      navLinks.classList.remove("expanded");
-    }
-  };
-
-  if (navBurger) {
-    navBurger.addEventListener("click", onNavClick);
-    document.addEventListener("click", onDocClick);
-  }
-</script>
+<script src="./index.ts"></script>
