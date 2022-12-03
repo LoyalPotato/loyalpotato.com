@@ -14,9 +14,11 @@
     fill: var(--background);
   }
 
-  &:hover {
-    .moon {
-      fill: var(--dark-bg);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .moon {
+        fill: var(--dark-bg);
+      }
     }
   }
 }
@@ -32,9 +34,11 @@
       fill: transparent;
     }
 
-    &:hover {
-      .sun {
-        fill: var(--light-bg);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        .sun {
+          fill: var(--light-bg);
+        }
       }
     }
   }

@@ -48,9 +48,11 @@
       fill: var(--background);
     }
 
-    &:hover {
-      .burger-icon {
-        fill: var(--light-bg);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        .burger-icon {
+          fill: var(--light-bg);
+        }
       }
     }
   }
@@ -66,9 +68,11 @@
     width: 1.4rem;
   }
 
-  &:hover {
-    .burger-icon {
-      fill: var(--dark-bg);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .burger-icon {
+        fill: var(--dark-bg);
+      }
     }
   }
 }
