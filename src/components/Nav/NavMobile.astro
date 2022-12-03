@@ -20,16 +20,22 @@ import Button from "../Button/Button.astro";
 </Button>
 
 <script>
+  const navLinks = document.querySelector(".nav-links");
+  const navBurger = document.getElementById("nav-burger");
   const onNavClick = () => {
-    const navLinks = document.querySelector(".nav-links");
     if (navLinks) {
       navLinks.classList.toggle("expanded");
     }
   };
-
-  const navBurger = document.getElementById("nav-burger");
+  const onDocClick = (e) => {
+    if (!navLinks || !navBurger || navBurger.contains(e.target)) return;
+    if (!navLinks.contains(e.target)) {
+      navLinks.classList.remove("expanded");
+    }
+  };
 
   if (navBurger) {
     navBurger.addEventListener("click", onNavClick);
+    document.addEventListener("click", onDocClick);
   }
 </script>
