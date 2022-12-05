@@ -1,0 +1,11 @@
+---
+import "./Link.less";
+
+export interface Props {
+  link: string;
+}
+
+const { link } = Astro.props;
+---
+
+<a class="link" href={link}><slot /></a>
