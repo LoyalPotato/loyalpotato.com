@@ -3,11 +3,17 @@ import "./LinkableTitle.less";
 interface Props {
   id: string;
   extraTitleClass?: string;
+  size?: "sm";
 }
-const { id, extraTitleClass } = Astro.props;
+const { id, size, extraTitleClass } = Astro.props;
 ---
 
-<h1 class={`linkable-title ${extraTitleClass ?? ""}`} id={id}>
+<h1
+  class={`linkable-title ${size ? `linkable-title--${size}` : ""} ${
+    extraTitleClass ?? ""
+  }`}
+  id={id}
+>
   <slot />
   <a class="linkable-section" href={`#${id}`}>#</a>
 </h1>
