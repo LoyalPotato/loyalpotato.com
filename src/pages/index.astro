@@ -1,7 +1,7 @@
 ---
 import LatestPosts from "../components/LatestPosts/LatestPosts.astro";
 import LatestProject from "../components/LatestProject.astro";
-import LinkBtn from "../components/LinkBtn/LinkBtn.astro";
+import Link from "../components/Link/Link.astro";
 import PageHeader from "../components/PageHeader/PageHeader.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -12,17 +12,16 @@ import Layout from "../layouts/Layout.astro";
     <p>
       I go by LoyalPotato online, but my real name is David. Either is fine :)
     </p>
-    <p>
-      Here you'll find what I'm working on and have worked on, all my <LinkBtn
-        link="/projects"
-        linkText="projects"
-      /> and some <LinkBtn link="/posts" linkText="posts" /> about what I find interesting
-      in all sorts of topics, such as Typescript, React, C# and others
+    <>
+      Here you'll find what I'm working on and have worked on, all my <Link
+        link="/projects">projects</Link
+      > and some <Link link="/posts">posts</Link> about what I find interesting in
+      all sorts of topics, such as Typescript, React, C# and others
       <small>(but at the moment none exist)</small>.
-    </p>
+    </>
     <p>
-      You can go straight to my <LinkBtn link="/about" linkText="about" /> page if
-      you want to know about my experiences and a little more about myself.
+      You can go straight to my <Link link="/about">about</Link> page if you wantnow
+      about my experiences and a little more about myself.
     </p>
     <LatestPosts />
     <LatestProject />

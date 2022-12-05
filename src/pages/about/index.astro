@@ -2,7 +2,7 @@
 import { Image } from "@astrojs/image/components";
 import profilePic from "../../assets/images/profile_human.png";
 import Experiences from "../../components/Experiences/Experiences.astro";
-import LinkBtn from "../../components/LinkBtn/LinkBtn.astro";
+import Link from "../../components/Link/Link.astro";
 import PageHeader from "../../components/PageHeader/PageHeader.astro";
 import Layout from "../../layouts/Layout.astro";
 
@@ -34,12 +34,9 @@ import "./about.less";
     </p>
     <p>
       If you want to check some of my project's code, then you can go to my
-      <LinkBtn link="https://github.com/LoyalPotato" linkText="Github" />. For
-      possible position offers or professional contacting/network here's also my
-      <LinkBtn
-        link="https://www.linkedin.com/in/dbazilio/"
-        linkText="LinkedIn"
-      /> profile.
+      <Link link="https://github.com/LoyalPotato">Github</Link>. For possible
+      position offers or professional contacting/network here's also my
+      <Link link="https://www.linkedin.com/in/dbazilio/">LinkedIn</Link> profile.
     </p>
     <Experiences />
   </main>
