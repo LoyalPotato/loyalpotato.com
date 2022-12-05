@@ -1,15 +1,27 @@
 ---
 import "./PageHeader.less";
 
-interface Props {
+export interface Props {
   title: string;
   subtitle?: string;
+  date?: string;
 }
 
-const { title, subtitle } = Astro.props;
+const { title, subtitle, date } = Astro.props;
+
+const timeFormat: Intl.DateTimeFormatOptions = {
+  dateStyle: "long",
+};
 ---
 
 <header class="page-header">
   <h1 class="title">{title}</h1>
   {subtitle && <h2 class="subtitle">{subtitle}</h2>}
+  {
+    date && (
+      <time datetime={date} class="date">
+        {new Date(date).toLocaleDateString(undefined, timeFormat)}
+      </time>
+    )
+  }
 </header>
