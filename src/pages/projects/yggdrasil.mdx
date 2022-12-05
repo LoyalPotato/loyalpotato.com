@@ -1,0 +1,89 @@
+---
+layout: "../../layouts/Project/ProjectLayout.astro"
+title: "Yggdrasil"
+subtitle: "My first custom keyboard, 36% layout" description: "TODO"
+publishDate: "15 October 2022"
+thumbnail: "/images/projects/yggdrasil/thumbnail.jpg"
+thumbnailAR: "16-9"
+---
+export const title = "Yggdrasil" 
+import Link from "../../components/Link/Link.astro"
+import LinkableTitle from "../../components/LinkableTitle/LinkableTitle.astro"
+import { Image } from "@astrojs/image/components"
+import fingerPaint from "../../assets/images/projects/yggdrasil/finger_paint.jpg"
+
+
+export const components = { a: Link, h2: LinkableTitle };
+
+{/*What is the structure?
+
+X- Small intro to what it is and why I did it. Why 36%. Link to my github
+- Roughly go through the process of what I needed to do in order to bring the keyboard to life
+- Challenges that appeared along the way
+- My current layout (find a way to get a fancy image or draw it yourself!)
+  - And what's missing from it that I want to improve/add
+- Reference links
+- Try and give prices for things so that people will have a sense of how much it would cost
+- Talk about the community and that there are so many different keyboard designs out there
+
+
+Structure:
+
+-
+*/}
+
+<LinkableTitle id="the-split">The Split</LinkableTitle>
+
+Split keyboards have always been at the top when it comes to ergonomics and with designing and creating a board being easier now than ever, more and more people are trying their luck at creating such boards based on their ideas and tastes.
+
+<LinkableTitle id="beginning-of-the-journey">Beginning of the journey</LinkableTitle>
+
+The first time split/ergonomic keyboards piqued my interest was when I first watched ThePrimeagen's video, [*My workflow using Vim, 2021*](https://www.youtube.com/watch?v=2WPC8rZQvQU), where he uses a split keyboard know as the [Dactyl](https://github.com/adereth/dactyl-keyboard). I went to see his other videos and was so astounded with his speed and how the keyboard looked that I just had to find out more about these sort of keyboards.
+
+And so, after watching some split keyboard videos, I found another channel on YouTube which had keyboard content more geared towards ergonomics. The channel in question is [Ben Vallack's](https://www.youtube.com/@BenVallack) and in there he goes into several rabbit holes about ergonomics of keyboard layouts such as Colemak DH and also the keyboards themselves, such as using an ortholinear keyboard, a split keyboard with 72 keys and then slowly tinkering down the number of keys and see what benefits that gets you.
+
+So far so good and little ol' me was just looking at these things purely for how they looked so unique and different from everything I'd seen. But then I stumbled upon a video guide detailing how to [design and make your custom keyboard](https://www.youtube.com/watch?v=UKfeJrRIcxw), and that's when the thought popped into my mind, that this doesn't really seem that difficult. And so I started the process of creating my very first, split, keyboard with 36 keys (on each hand).
+
+<LinkableTitle id="beginning-of-the-journey">Decisions</LinkableTitle>
+
+<LinkableTitle id="key-disposition" size="sm">Key disposition</LinkableTitle>
+
+The first thing I had to decide was how the layout was going to be and how many keys I wanted. I looked into another of Ben's video in which he has this section in which he [paints](https://youtu.be/1C2bJkzIaPE?t=173) his fingers and sees how they span. So I tried it myself and I got this result:
+
+<div class="project-img-container">
+  <Image src={fingerPaint} alt="Finger painting of finger span" format="webp" loading="lazy" class="project__img"/>
+</div>
+
+I made some rough measurements so I had some idea of the dimensions of the keyboard.
+
+With this I knew that I wanted some finger span and also column stagger <small>(which is when the columns are of different heights)</small>.
+
+And the last decision that is left, other than the final key layout with layers, which will only come later, is the number of keys.
+
+<LinkableTitle id="Keys" size="sm">Keys</LinkableTitle>
+
+To find out how many keys I was again looking through some split keyboard videos and found another great one about [why use a split keyboard](https://youtu.be/rrska7UU7BE). But the part that pertained to [key numbers and benefits](https://youtu.be/rrska7UU7BE?t=125) states that with a 30% <small>(minus thumb keys)</small> each finger won't be more than one key away from another. For example, say that your fingers are resting in the home row and you wan't to type a number. With regular keyboard, you can't just touch the key around it in any direction and have it output a number, without any extra configuration at least. But with a split keyboard this is possible. Because of this, I had made my decision to go forward with a 36% layout. That is 30 keys plus 3 keys in the thumb cluster.
+
+<LinkableTitle id="designing">Designing</LinkableTitle>
+
+The design part was done without being too strict about measurements <small>(although if I do another in the future I'd like for it to be more strict about that)</small>. That is, some part of the design was done by "looks good" or like we say here in Portugal, <i>a olhómetro</i>.
+
+I started with using Ergogen but couldn't figure out how to make that work so I just used it to get a rough shape for the layout.
+
+After that I moved into Kicad, wiring up the circuit for the micro-controller, all the switches and other components. For reference I looked at [Lily58](https://github.com/kata0511/Lily58) and [Corne](https://github.com/foostan/crkbd) schematics.
+
+TODO:
+
+- Add link to the cherry/choc switch kicad "image"
+- Add image of how it looks in the schematics and the wiring diagram in kicad and the 3d render for the board
+- Then add a real picture of the pcb once received
+
+<LinkableTitle id="total-cost">Total Cost</LinkableTitle>
+
+I'll leave here how much I spent for all the parts, minus the tools, such as soldering iron, and a link to the parts as well.
+
+<LinkableTitle id="references">References</LinkableTitle>
+
+Here are a few links that helped me with at least one step in the design and build.
+
+- [TODO](https://www.youtube.com/watch?v=UKfeJrRIcxw)
