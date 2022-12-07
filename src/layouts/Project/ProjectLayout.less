@@ -33,6 +33,28 @@
       width: 100%;
     }
   }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      margin: 0.4rem 0;
+      line-height: 1.5rem;
+
+      &::before {
+        content: "- ";
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-spacing: 0.5rem;
+
+    td {
+      text-align: center;
+    }
+  }
 }
 
 @media screen and (min-width: 636px) {
