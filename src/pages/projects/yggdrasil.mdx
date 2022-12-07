@@ -78,12 +78,52 @@ TODO:
 - Add image of how it looks in the schematics and the wiring diagram in kicad and the 3d render for the board
 - Then add a real picture of the pcb once received
 
+For the assembly of this board, you can go to the Yggdrasil repository for the [build guide](https://github.com/LoyalPotato/yggdrasil). It goes in depth for every step necessary to assemble the keyboard, from soldering to flashing the micro-controller.
+
+<LinkableTitle id="keymap">Keymap</LinkableTitle>
+
+For the keymap, I tried to make it so that I can do both MacOS and Windows shortcuts.
+TODO:
+
+- Make a sketch with the keys used and each layer
+
+<LinkableTitle id="keymap-shorcomings" size="sm">Shortcomings</LinkableTitle>
+
+Although I've made the mapping work so far, it's not perfect/close to finished. There are still some shortcuts that I am not able to do, but I think most of it can be solved if I figure out all the possibilities with QMK.
+
 <LinkableTitle id="total-cost">Total Cost</LinkableTitle>
 
+TODO: Make the list just a regular - list, not with dots
+
 I'll leave here how much I spent for all the parts, minus the tools, such as soldering iron, and a link to the parts as well.
+Some notes about the prices:
+- Some of these items are bought in bulk, like the diodes, so this is just a price for the specific number of parts required.
+- The items don't include shipping
+- The price includes the VAT for Portugal so it may vary when you go check
+
+| Parts | Price |
+| --- | --- | 
+| PCB x2 | {new Intl.NumberFormat(undefined, { style: 'currency', currency: 'EUR' }).format(5.13)} |
+| USB-C ProMicro x2 | {new Intl.NumberFormat(undefined, { style: 'currency', currency: 'EUR' }).format(15.76)}  |
+| TRRS Jacks x2 | {new Intl.NumberFormat(undefined, { style: 'currency', currency: 'EUR' }).format(0.04)} |
+| Kailh Sockets x36 | {new Intl.NumberFormat(undefined, { style: 'currency', currency: 'EUR' }).format(6.21)}  |
+| Diodes x36 | {new Intl.NumberFormat(undefined, { style: 'currency', currency: 'EUR' }).format(0.47)} |
+| Tact Switch x2 | {new Intl.NumberFormat(undefined, { style: 'currency', currency: 'EUR' }).format(0.04)} |
+
+Also, as I had a 3d printer, I was able to print the plates. Because of that, I did not include it in the price table and total. The same goes for switches and keycaps, it's expected that you will have these already or intend to buy them.
+
+Having said that the total comes out to {new Intl.NumberFormat(undefined, {style: 'currency', currency: 'EUR'}).format(37.65)} <small>(again, no shipping included)</small> for building both boards :).
 
 <LinkableTitle id="references">References</LinkableTitle>
 
 Here are a few links that helped me with at least one step in the design and build.
 
-- [TODO](https://www.youtube.com/watch?v=UKfeJrRIcxw)
+TODO: Fix styling for bullet lists
+
+- [Ergogen](https://github.com/ergogen/ergogen) and the kind people from their [discord](https://discord.gg/nbKcAZB)
+- [Ben Vallack's](https://github.com/benvallack/ergogen) flipper ergogen config and his youtube [video](https://www.youtube.com/watch?v=UKfeJrRIcxw)
+- [Corne Kbd](https://github.com/foostan/crkbd)
+- [ruiqimao's guide](https://github.com/ruiqimao/keyboard-pcb-guide)
+- [tapioki's Architeuthis dux](https://github.com/tapioki/cephalopoda/tree/main/Architeuthis%20dux)
+- [Lily58](https://github.com/kata0510/Lily58)
+- [Keyboard Atelier's Discord](https://discord.gg/b7vwhHS)
