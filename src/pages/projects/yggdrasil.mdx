@@ -12,6 +12,9 @@ import LinkableTitle from "../../components/LinkableTitle/LinkableTitle.astro"
 import { Image } from "@astrojs/image/components"
 import fingerPaint from "../../assets/images/projects/yggdrasil/finger_paint.jpg"
 import yggSchematics from "../../assets/images/projects/yggdrasil/yggdrasil-schematics.png"
+import yggConnections from "../../assets/images/projects/yggdrasil/yggdrasil-connections.png"
+import yggPcb from "../../assets/images/projects/yggdrasil/yggdrasil-3d-view.png"
+import yggRealPcb from "../../assets/images/projects/yggdrasil/yggdrasil-real-pcb.jpg"
 
 
 export const components = { a: Link, h2: LinkableTitle };
@@ -95,11 +98,27 @@ Here's how it looks:
   <Image src={yggSchematics} alt="Schematics for the pcb" format="webp" loading="lazy" class="project__img"/>
 </div>
 
-TODO:
+Then with this schematic you go into the PCB designer of kicad and there you will have the footprints <small>(which are sort of blueprints for certain components)</small> unorganized.
 
-- Add link to the cherry/choc switch kicad "image"
-- Add image of how it looks in the schematics and the wiring diagram in kicad and the 3d render for the board
-- Then add a real picture of the pcb once received
+My goal here is not to teach how to design/wire up the PCB. There are great guides out there, I'd say that [ai03's](https://ai03.com/designer-resources) is a good place to look around. Other links that I find useful will be in the [references section](#references) of this article. Having said that, here's how my board looked once it was all connected.
+
+
+<div class="project-img-container">
+  <Image src={yggConnections} alt="Connections for pcb" format="webp" loading="lazy" class="project__img"/>
+</div>
+
+The 3d view of the same PCB, in Kicad:
+
+<div class="project-img-container">
+  <Image src={yggPcb} alt="3d view of pcb" format="webp" loading="lazy" class="project__img"/>
+</div>
+
+And finally the physical PCB, ordered from JLCPCB, but there are many others out there as well:
+
+<div class="project-img-container">
+  <Image src={yggRealPcb} alt="Physical pcb" format="webp" loading="lazy" class="project__img"/>
+</div>
+
 
 For the assembly of this board, you can go to the Yggdrasil repository for the [build guide](https://github.com/LoyalPotato/yggdrasil). It goes in depth for every step necessary to assemble the keyboard, from soldering to flashing the micro-controller.
 
