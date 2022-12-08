@@ -11,6 +11,7 @@ import Link from "../../components/Link/Link.astro"
 import LinkableTitle from "../../components/LinkableTitle/LinkableTitle.astro"
 import { Image } from "@astrojs/image/components"
 import fingerPaint from "../../assets/images/projects/yggdrasil/finger_paint.jpg"
+import yggSchematics from "../../assets/images/projects/yggdrasil/yggdrasil-schematics.png"
 
 
 export const components = { a: Link, h2: LinkableTitle };
@@ -87,6 +88,13 @@ I started with using Ergogen but couldn't figure out how to make that work so I 
 
 After that I moved into Kicad, wiring up the circuit for the micro-controller, all the switches and other components. For reference I looked at [Lily58](https://github.com/kata0511/Lily58) and [Corne](https://github.com/foostan/crkbd) schematics.
 
+It shows how the switches, diodes and micro-controller are connected. Besides that, it also shows the connections for the reset button and the trrs jack.
+Here's how it looks:
+
+<div class="project-img-container">
+  <Image src={yggSchematics} alt="Schematics for the pcb" format="webp" loading="lazy" class="project__img"/>
+</div>
+
 TODO:
 
 - Add link to the cherry/choc switch kicad "image"
@@ -148,3 +156,9 @@ Here are a few links that helped me with at least one step in the design and bui
 - [tapioki's Architeuthis dux](https://github.com/tapioki/cephalopoda/tree/main/Architeuthis%20dux)
 - [Lily58](https://github.com/kata0510/Lily58)
 - [Keyboard Atelier's Discord](https://discord.gg/b7vwhHS)
+- [The Corne Keyboard](https://mattgemmell.com/the-corne-keyboard/)
+- [Compressing your keyboard](https://mattgemmell.com/compressing-your-keyboard/)
+- [The Darnest Thing - Corne](http://thedarnedestthing.com/corne)
+- [Miryoku](https://github.com/manna-harbour/miryoku/)
+
+- [Kbd footprints](https://github.com/foostan/kbd)
