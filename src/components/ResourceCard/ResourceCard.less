@@ -1,0 +1,65 @@
+.resource-card-container {
+  border-radius: var(--border-radius);
+  background-color: var(--pine-tree);
+  max-width: 25rem;
+  color: var(--dark-contrast-white);
+
+  .resource-card-img-container {
+    position: relative;
+    max-height: 14.06rem;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    overflow: hidden;
+  }
+
+  .resource-card__img {
+    width: 100%;
+    position: relative;
+    display: block;
+    filter: brightness(60%);
+  }
+
+  .resource-card-titles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // NOTE: Uncomment this to add dark bg with blurred edge
+    // background-color: rgba(0, 0, 0, 0.7);
+    // box-shadow: 0 0 5px 10px rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 1rem 1rem 1rem;
+
+    .resource-card__title {
+      margin: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .resource-card__subtitle {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .resource-card__description {
+    display: none;
+  }
+
+}
+
+@media screen and (min-width: 636px) {
+  .resource-card-container {
+
+    .resource-card__img {
+      border-radius: 0;
+    }
+
+    .resource-card__description {
+      padding: 1rem;
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+  }
+}

@@ -5,7 +5,6 @@
     "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:astro/jsx-a11y-recommended"
   ],
   "env": {

@@ -1,0 +1,41 @@
+---
+import type { MDXLayoutProps } from "astro";
+import PageHeader from "../../components/PageHeader/PageHeader.astro";
+import type { ProjectFrontmatter } from "../../types/project";
+import type { Props as LayoutProps } from "../Layout.astro";
+import Layout from "../Layout.astro";
+import "./ProjectLayout.less";
+
+type Props = MDXLayoutProps<ProjectFrontmatter> & LayoutProps;
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <article class="project">
+    <header class="project-header">
+      <PageHeader
+        date={frontmatter.publishDate}
+        title={frontmatter.title}
+        subtitle={frontmatter.subtitle}
+      />
+      {
+        frontmatter.thumbnail && (
+          <img
+            src={frontmatter.thumbnail}
+            alt="Thumbnail"
+            class:list={[
+              "project__thumbnail",
+              frontmatter.thumbnailAR
+                ? `project__thumbnail--${frontmatter.thumbnailAR}`
+                : "project__thumbnail--16-9",
+            ]}
+          />
+        )
+      }
+    </header>
+    <main>
+      <slot />
+    </main>
+  </article>
+</Layout>

@@ -1,0 +1,185 @@
+---
+layout: "../../layouts/Project/ProjectLayout.astro"
+title: "Yggdrasil"
+subtitle: "My first custom keyboard, 36% layout" 
+description: "Ride along through the journey that I went through to get my first keyboard designed, assembled and fully working."
+publishDate: "15 October 2022"
+thumbnail: "/images/projects/yggdrasil/thumbnail.jpg"
+thumbnailAR: "16-9"
+---
+export const title = "Yggdrasil" 
+import Link from "../../components/Link/Link.astro"
+import LinkableTitle from "../../components/LinkableTitle/LinkableTitle.astro"
+import { Image } from "@astrojs/image/components"
+
+import fingerPaint from "../../assets/images/projects/yggdrasil/finger_paint.jpg"
+
+import yggSchematics from "../../assets/images/projects/yggdrasil/yggdrasil-schematics.png"
+import yggConnections from "../../assets/images/projects/yggdrasil/yggdrasil-connections.png"
+import yggPcb from "../../assets/images/projects/yggdrasil/yggdrasil-3d-view.png"
+import yggRealPcb from "../../assets/images/projects/yggdrasil/yggdrasil-real-pcb.jpg"
+
+
+export const components = { a: Link, h2: LinkableTitle };
+
+{/*What is the structure?
+
+X- Small intro to what it is and why I did it. Why 36%. Link to my github
+X- Roughly go through the process of what I needed to do in order to bring the keyboard to life
+X- Challenges that appeared along the way
+- My current layout (find a way to get a fancy image or draw it yourself!)
+  - And what's missing from it that I want to improve/add
+- Reference links
+X- Try and give prices for things so that people will have a sense of how much it would cost
+X- Talk about the community and that there are so many different keyboard designs out there
+
+
+Structure:
+
+-
+*/}
+
+<LinkableTitle id="table-of-contents">Table of Contents</LinkableTitle>
+
+Feel free to jump to another section of the article!
+
+- [The Split](#the-split)
+- [Beginning of the journey](#beginning-of-the-journey)
+- [Decisions](#decisions)
+- [Key disposition](#key-disposition)
+- [Keys](#keys)
+- [Designing](#designing)
+{/* - [Keymap](#keymap) */}
+- [Total cost](#total-cost)
+- [Final thoughts](#final-thoughts)
+- [References](#references)
+
+<LinkableTitle id="the-split">The Split</LinkableTitle>
+
+Split keyboards have always been at the top when it comes to ergonomics, and with designing and creating a board being easier now than ever, more and more people are trying their luck at creating such boards based on their ideas and tastes.
+
+<LinkableTitle id="beginning-of-the-journey">Beginning of the journey</LinkableTitle>
+
+The first time split/ergonomic keyboards piqued my interest was when I first watched ThePrimeagen's video, <Link target="_blank" href="https://www.youtube.com/watch?v=2WPC8rZQvQU">*My workflow using Vim, 2021*</Link>, where he uses a split keyboard know as the <Link target="_blank" href="https://github.com/adereth/dactyl-keyboard">Dactyl</Link>. I went to see his other videos and was so astounded with his speed and how the keyboard looked that I just had to find out more about these sort of keyboards.
+
+And so, after watching some split keyboard videos, I found another channel on YouTube which had keyboard content more geared towards ergonomics. The channel in question is <Link target="_blank" href="https://www.youtube.com/@BenVallack">Ben Vallack's</Link> and in there he goes into several rabbit holes about the ergonomics of keyboard layouts such as Colemak DH as well as the keyboards themselves, such as using an ortholinear keyboard, a split keyboard with 72 keys and then slowly tinkering down the number of keys and see what benefits that gets you.
+
+So far so good and little ol' me was just looking at these things purely for how they looked so unique and different from everything I'd seen. But then I stumbled upon a video guide detailing how to <Link target="_blank" href="https://www.youtube.com/watch?v=UKfeJrRIcxw">design and make your custom keyboard</Link>, and that's when the thought popped into my mind, that this doesn't really seem that difficult. So I started the process of creating my very first, split, keyboard with 36 keys (on each hand).
+
+<LinkableTitle id="decisions">Decisions</LinkableTitle>
+
+<LinkableTitle id="key-disposition" size="sm">Key disposition</LinkableTitle>
+
+The first thing I had to decide was how the layout was going to be and how many keys I wanted. I looked into another of Ben's video in which he has this section in which he paints his fingers and sees how they span. So I tried it myself and I got this result:
+
+<div class="project-img-container">
+  <Image src={fingerPaint} alt="Finger painting of finger span" format="webp" loading="lazy" class="project__img"/>
+</div>
+
+I made some rough measurements so I had some idea of the dimensions of the keyboard.
+
+With this I knew that I wanted some finger span and also column stagger <small>(which is when the columns are of different heights)</small>.
+
+And the last decision that is left, other than the final key layout with layers, is the number of keys.
+
+<LinkableTitle id="Keys" size="sm">Keys</LinkableTitle>
+
+To find out how many keys I was again looking through some split keyboard videos and found another great one about <Link target="_blank" href="https://youtu.be/rrska7UU7BE">why use a split keyboard</Link>. But the part that pertained to key numbers and benefits states that with a 30% <small>(minus thumb keys)</small> each finger won't be more than one key away from another. For example, say that your fingers are resting in the home row and you wan't to type a number. With regular keyboard, you can't just touch the key around it in any direction and have it output a number, without any extra configuration at least. But with a split keyboard this is possible. Because of this, I had made my decision to go forward with a 36% layout. That is 30 keys plus 3 keys in the thumb cluster.
+
+<LinkableTitle id="designing">Designing</LinkableTitle>
+
+The design part was done without being too strict about measurements <small>(although if I do another in the future I'd like for it to be more strict about that)</small>. That is, some part of the design was done by "looks good" or like we say here in Portugal, <i>a olhómetro</i>.
+
+I started with using Ergogen but couldn't figure out how to make that work so I just used it to get a rough shape for the layout.
+
+After that I moved into Kicad, wiring up the circuit for the micro-controller, all the switches and other components. For reference I looked at Lily58 and Corne schematics.
+
+It shows how the switches, diodes and micro-controller are connected. Besides that, it also shows the connections for the reset button and the trrs jack.
+Here's how it looks:
+
+<div class="project-img-container">
+  <Image src={yggSchematics} alt="Schematics for the pcb" format="webp" loading="lazy" class="project__img"/>
+</div>
+
+Then with this schematic you go into the PCB designer of kicad and there you will have the footprints <small>(which are sort of blueprints for certain components)</small> unorganized.
+
+My goal here is not to teach how to design/wire up the PCB. There are great guides out there, I'd say that <Link href="https://ai03.com/designer-resources" target="_blank">ai03's</Link> is a good place to look around. Other links that I find useful will be in the [references section](#references) of this article. Having said that, here's how my board looked once it was all connected.
+
+
+<div class="project-img-container">
+  <Image src={yggConnections} alt="Connections for pcb" format="webp" loading="lazy" class="project__img"/>
+</div>
+
+The 3d view of the same PCB, in Kicad:
+
+<div class="project-img-container">
+  <Image src={yggPcb} alt="3d view of pcb" format="webp" loading="lazy" class="project__img"/>
+</div>
+
+And finally the physical PCB, ordered from JLCPCB, but there are many others out there as well:
+
+<div class="project-img-container">
+  <Image src={yggRealPcb} alt="Physical pcb" format="webp" loading="lazy" class="project__img"/>
+</div>
+
+
+For the assembly of this board, you can go to the Yggdrasil repository for the <Link href="https://github.com/LoyalPotato/yggdrasil" target="_blank">build guide</Link>. It goes in depth for every step necessary to assemble the keyboard, from soldering to flashing the micro-controller.
+
+{/*<LinkableTitle id="keymap">Keymap</LinkableTitle>
+
+For the keymap, I tried to make it so that I can do both MacOS and Windows shortcuts.
+TODO:
+
+- Make a sketch with the keys used and each layer
+
+Although I've made the mapping work so far, it's not perfect/close to finished. There are still some shortcuts that I am not able to do, but I think most of it can be solved if I figure out all the possibilities with QMK.
+*/}
+<LinkableTitle id="total-cost">Total cost</LinkableTitle>
+
+I'll leave here how much I spent for all the parts, minus the tools, such as soldering iron. If you'd like links for some of these parts, then you can go to my build guide in the parts section.
+
+Some notes about the prices:
+- Some of these items are bought in bulk, like the diodes, so this is just a price for the specific number of parts required
+- The items don't include shipping
+- The price includes the VAT for Portugal so it may vary when you go check
+
+| Parts | Price |
+| --- | --- | 
+| PCB x2 | {new Intl.NumberFormat(undefined, { style: 'currency', currency: 'EUR' }).format(5.13)} |
+| USB-C ProMicro x2 | {new Intl.NumberFormat(undefined, { style: 'currency', currency: 'EUR' }).format(15.76)}  |
+| TRRS Jacks x2 | {new Intl.NumberFormat(undefined, { style: 'currency', currency: 'EUR' }).format(0.04)} |
+| Kailh Sockets x36 | {new Intl.NumberFormat(undefined, { style: 'currency', currency: 'EUR' }).format(6.21)}  |
+| Diodes x36 | {new Intl.NumberFormat(undefined, { style: 'currency', currency: 'EUR' }).format(0.47)} |
+| Tact Switch x2 | {new Intl.NumberFormat(undefined, { style: 'currency', currency: 'EUR' }).format(0.04)} |
+
+Also, as I had a 3d printer, I was able to print the plates. Because of that, I did not include it in the price table and total. The same goes for switches and keycaps, it's expected that you will have these already or intend to buy them.
+
+Having said that, the total comes out to {new Intl.NumberFormat(undefined, {style: 'currency', currency: 'EUR'}).format(37.65)} <small>(again, no shipping included)</small> for building both boards :).
+
+<LinkableTitle id="final-thoughts">Final Thoughts</LinkableTitle>
+
+As a closing note, split keyboards may not be for everyone. It takes some getting used to and the keymap may not always suit your needs.
+
+For me, I liked how they looked and wanted to use one as a preventive measure for future injuries. I don't have any injuries, that I know of, that could be caused by a regular keyboard, so I can't really tell if there is any improvement on that aspect of having a split keyboard.
+
+On the note of the key layout, I think I got used to it quite fast as I designed it with my hands in mind. The only thing that might've taken a bit longer was the thumb keys and switching between the layers and memorizing where everything is.
+Another point that I'd like to improve on any future designs that I make similar to this one is that, for me, the splay and column stagger on the pinky is proving to be a bit too much, as I can't reach the Q and P sometimes without re-adjusting. I'd also bring the middle finger column a tick down.
+
+All around, I'd say if you have the time and like the idea of having something custom made by you to fit your needs, then it will be an amazing experience to design, build and watch your own personal board come to life and using it on a daily basis. It might take some time to get used to the weird and different layout and the fact that your hands are both responsible for one half of a keyboard, but it will be worth it!
+
+<LinkableTitle id="references">References</LinkableTitle>
+
+Here are a few links that helped me with at least one step in the design and build.
+
+- [Yggdrasil repository](https://github.com/LoyalPotato/yggdrasil)
+- [Corne Kbd](https://github.com/foostan/crkbd)
+- [ruiqimao's guide](https://github.com/ruiqimao/keyboard-pcb-guide)
+- [tapioki's Architeuthis dux](https://github.com/tapioki/cephalopoda/tree/main/Architeuthis%20dux)
+- [Lily58](https://github.com/kata0510/Lily58)
+- [Keyboard Atelier's Discord](https://discord.gg/b7vwhHS)
+- [The Corne Keyboard](https://mattgemmell.com/the-corne-keyboard/)
+- [Compressing your keyboard](https://mattgemmell.com/compressing-your-keyboard/)
+- [The Darnest Thing - Corne](http://thedarnedestthing.com/corne)
+- [Miryoku](https://github.com/manna-harbour/miryoku/)
+- [Kbd footprints](https://github.com/foostan/kbd)
+- [Are Split Keyboards Better For Ergonomics?](https://youtu.be/1C2bJkzIaPE?t=173)
