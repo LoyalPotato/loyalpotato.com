@@ -1,19 +1,12 @@
 ---
 import type { MDXLayoutProps } from "astro";
 import PageHeader from "../../components/PageHeader/PageHeader.astro";
+import type { ProjectFrontmatter } from "../../types/project";
 import type { Props as LayoutProps } from "../Layout.astro";
 import Layout from "../Layout.astro";
 import "./ProjectLayout.less";
 
-type Props = MDXLayoutProps<{
-  title: string;
-  subtitle?: string;
-  thumbnail?: string;
-  publishDate: string;
-  description: string;
-  thumbnailAR?: "4-3" | "16-9";
-}> &
-  LayoutProps;
+type Props = MDXLayoutProps<ProjectFrontmatter> & LayoutProps;
 
 const { frontmatter } = Astro.props;
 ---
