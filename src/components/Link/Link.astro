@@ -1,11 +1,10 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 import "./Link.less";
 
-export interface Props {
-  href: string;
-}
+export type Props = HTMLAttributes<"a">;
 
-const { href } = Astro.props;
+const { href, target, rel } = Astro.props;
 ---
 
-<a class="link" href={href}><slot /></a>
+<a class="link" href={href} target={target} rel={rel ?? "noopener"}><slot /></a>
