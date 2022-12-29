@@ -1,11 +1,43 @@
 ---
+import "../styles/latest.less";
+import type { ProjectFrontmatter } from "../types/project";
 import LinkableTitle from "./LinkableTitle/LinkableTitle.astro";
 import NoResource from "./NoResource/NoResource.astro";
+import ResourceCard from "./ResourceCard/ResourceCard.astro";
 
-const projects = await Astro.glob("../pages/projects/*.mdx");
+const projects = await Astro.glob<ProjectFrontmatter>(
+  "../pages/projects/*.mdx",
+);
+
+const sortedProj = projects
+  .slice(0, 2)
+  .sort(
+    (a, b) =>
+      Date.parse(b.frontmatter.publishDate) -
+      Date.parse(a.frontmatter.publishDate),
+  );
 ---
 
 <div>
   <LinkableTitle id="latestProject">Latest Project</LinkableTitle>
-  {projects.length === 1 && <NoResource resourceType="projects" />}
+  {
+    (projects.length === 1 && <NoResource resourceType="projects" />) || (
+      <div class="latest-resource">
+        {sortedProj.map((proj) => {
+          if (proj.file.includes("empty.mdx")) return null;
+          //TODO: Add a default thumbnail
+          return (
+            <a href={proj.url}>
+              <ResourceCard
+                title={proj.frontmatter.title}
+                subtitle={proj.frontmatter.subtitle}
+                thumbnail={proj.frontmatter.thumbnail || ""}
+                description={proj.frontmatter.description}
+              />
+            </a>
+          );
+        })}
+      </div>
+    )
+  }
 </div>
