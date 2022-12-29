@@ -4,7 +4,7 @@ import "./ResourceCard.less";
 export interface Props {
   thumbnail: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   description?: string;
 }
 
@@ -16,7 +16,7 @@ const { thumbnail, title, subtitle, description } = Astro.props;
     <img class="resource-card__img" src={thumbnail} alt={title} />
     <div class="resource-card-titles-container">
       <h1 class="resource-card__title">{title}</h1>
-      <h3 class="resource-card__subtitle">{subtitle}</h3>
+      {subtitle && <h3 class="resource-card__subtitle">{subtitle}</h3>}
     </div>
   </div>
   {
