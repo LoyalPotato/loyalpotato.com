@@ -46,6 +46,7 @@
 
 @media screen and (min-width: 636px) {
   .resource-card-container {
+    transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
 
     .resource-card__img {
       border-radius: 0;
@@ -60,6 +61,11 @@
       overflow: hidden;
       font-weight: 500;
       font-size: 1rem;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0rem .6rem 1.2rem rgba(0, 0, 0, 0.3);
     }
   }
 }
