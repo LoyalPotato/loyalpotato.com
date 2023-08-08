@@ -8,10 +8,38 @@ import Experience from "./Experience.astro";
     >Experiences</LinkableTitle
   >
   <Experience
+    company="EposNow"
+    position="Software Engineer"
+    dateStart={new Date(2023, 4, 3)}
+    dateEnd="present"
+    techStacks={[
+      "React",
+      "TypeScript",
+      "Android",
+      "Golang",
+      ".NET",
+      "C#",
+      "AWS",
+      "PostgreSQL",
+    ]}
+  >
+    <div slot="description">
+      <p>
+        Improved usability on the software used in a POS system used by 65,000
+        businesses worldwide.
+      </p>
+      <p>
+        This was done through implementations of several features, from a
+        reminder system that improved till performance to designing and
+        implementing the ability to use themes in the till.
+      </p>
+    </div>
+  </Experience>
+  <Experience
     company="Learninghubz"
     position="Full Stack Engineer"
     dateStart={new Date(2020, 7, 24)}
-    dateEnd="present"
+    dateEnd={new Date(2023, 8, 7)}
     techStacks={[
       "React",
       "TypeScript",
@@ -27,13 +55,15 @@ import Experience from "./Experience.astro";
       <p>
         First professional experience working as a full stack engineer. Small
         team, working as the sole programmer for frontend & backend 6 months
-        after starting until present day.
+        after starting until the final day. From April, 2023 to August, 2023
+        worked in a part-time schedule along with new employer EposNow.
       </p>
       <p>
         Dealt with improving and fixing a content curation platform for
         companies with thousands of employees. Includes, but not limited to,
         integrations with other services, such as YouTube and Vimeo, content
-        management, dashboards. Application is built with AngularJS.
+        management, dashboards and solo application wide stylistic redesigns.
+        Application is built with AngularJS.
       </p>
       <p>
         Architect and manage application for learning management, built with
