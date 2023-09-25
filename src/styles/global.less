@@ -13,14 +13,14 @@
 
   /* Dark Mode */
   --smooth-black: #202023;
-  --dark-bg: var(--smooth-black);
+  --dark-bg: black;
 
   --dark-blue-step-1: #0D1B2A;
   --dark-blue-step-2: #1B263B;
   --dark-blue-step-3: #415A77;
   --dark-blue-step-4: #778DA9;
 
-  --dark-contrast-white: #E0E1DD;
+  --dark-contrast-white: #e6e6e6;
   --dark-contrast-orange: #DA7422;
   --dark-contrast-crimson: #6F1D1B;
 
@@ -71,7 +71,7 @@ html {
 
 html.dark {
   &:root {
-    --background: var(--smooth-black);
+    --background: var(--dark-bg);
     --text-color: var(--dark-contrast-white);
     --text-color-secondary: var(--silver);
     --contrast-color: var(--dark-contrast-crimson);
