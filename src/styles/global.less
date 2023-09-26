@@ -20,9 +20,14 @@
   --dark-blue-step-3: #415A77;
   --dark-blue-step-4: #778DA9;
 
+  --light-blue-step-1: #8ac0ff;
+
   --dark-contrast-white: #e6e6e6;
   --dark-contrast-orange: #DA7422;
   --dark-contrast-crimson: #6F1D1B;
+  --dark-contrast-dark-brick: #4c0605;
+  --shark-black: #1c1c20;
+
 
   /* Light Mode */
 
@@ -31,6 +36,9 @@
 
   --pine-tree: #30362F;
   --laurel-green: #a3b18a;
+  --green-white: #e5e9dc;
+  --nandor: #4d5852;
+  --bilbao: #277c18;
 
   /* Common Colors */
 
@@ -62,6 +70,11 @@ html {
     --contrast-color: var(--pine-tree);
     --contrast-color-light: var(--laurel-green);
     --selection: var(--laurel-green);
+    --card-contrast: var(--pine-tree);
+
+    --short-card-text-highlight-color: var(--bilbao);
+    --short-card-contrast: var(--green-white);
+    --short-card-text-color-secondary: var(--nandor);
   }
 
   *::selection {
@@ -76,6 +89,11 @@ html.dark {
     --text-color-secondary: var(--silver);
     --contrast-color: var(--dark-contrast-crimson);
     --selection: var(--dark-blue-step-4);
+    --card-contrast: var(--dark-contrast-dark-brick);
+
+    --short-card-contrast: var(--shark-black);
+    --short-card-text-highlight-color: var(--light-blue-step-1);
+    --short-card-text-color-secondary: var(--silver);
   }
 
   *::selection {
