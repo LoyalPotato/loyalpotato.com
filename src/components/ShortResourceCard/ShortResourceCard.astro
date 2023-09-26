@@ -1,0 +1,29 @@
+---
+import "./ShortResourceCard.less";
+import { timeFormat } from "../../utils/time";
+
+export interface Props {
+  title: string;
+  description?: string;
+  date?: string;
+}
+
+const { title, description, date } = Astro.props;
+---
+
+<div class="short-resource-card-container">
+  <div class="short-resource-card-top-line">
+    <h1 class="short-resource-card__title">{title}</h1>
+    {
+      date && (
+        <time
+          class="short-resource-card__pub-date"
+          datetime={new Date(date).toISOString()}
+        >
+          {new Date(date).toLocaleDateString(undefined, timeFormat)}
+        </time>
+      )
+    }
+  </div>
+  {description && <p class="short-resource-card__description">{description}</p>}
+</div>
