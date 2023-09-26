@@ -12,3 +12,4 @@ Some websites I used as inspiration:
 
 - [devaslife](https://www.craftz.dog/)
 - [zhenghao](https://www.zhenghao.io/)
+- [anthonynsimon](https://anthonynsimon.com/blog/)
