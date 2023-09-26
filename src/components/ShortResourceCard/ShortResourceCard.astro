@@ -1,6 +1,6 @@
 ---
+import { timeFormat_long } from "../../utils/time";
 import "./ShortResourceCard.less";
-import { timeFormat } from "../../utils/time";
 
 export interface Props {
   title: string;
@@ -20,7 +20,7 @@ const { title, description, date } = Astro.props;
           class="short-resource-card__pub-date"
           datetime={new Date(date).toISOString()}
         >
-          {new Date(date).toLocaleDateString(undefined, timeFormat)}
+          {new Date(date).toLocaleDateString(undefined, timeFormat_long)}
         </time>
       )
     }
