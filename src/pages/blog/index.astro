@@ -1,0 +1,10 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ArticleList from "../../components/ArticleList/ArticleList.astro";
+
+const title = "The Compendium";
+---
+
+<Layout title={title} description="List of LoyalPotato's posts">
+  <ArticleList title={title} resourceType="posts" />
+</Layout>
