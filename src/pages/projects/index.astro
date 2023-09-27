@@ -1,44 +1,10 @@
 ---
-import NoResource from "../../components/NoResource/NoResource.astro";
-import PageHeader from "../../components/PageHeader/PageHeader.astro";
-import ShortResourceCard from "../../components/ShortResourceCard/ShortResourceCard.astro";
 import Layout from "../../layouts/Layout.astro";
-import "../../styles/articles.less";
-import type { ProjectFrontmatter } from "../../types/project";
+import ArticleList from "../../components/ArticleList/ArticleList.astro";
 
-const projects = await Astro.glob<ProjectFrontmatter>("./*.mdx");
-
-const sortedProj = projects.sort(
-  (a, b) =>
-    Date.parse(b.frontmatter.publishDate) -
-    Date.parse(a.frontmatter.publishDate),
-);
-// NOTE: The posts page should follow a similar one, so could merge into one comp
+const title = "Projects";
 ---
 
-<Layout title="Projects" description="LoyalPotato's projects">
-  <main class="articles">
-    <PageHeader title="Projects" />
-    {
-      (projects.length === 1 && <NoResource resourceType="projects" />) || (
-        // Not sure why I need this fragment...
-        <>
-          {sortedProj.map((proj) => {
-            if (proj.file.includes("empty.mdx")) return null;
-            return (
-              <article class="article-row">
-                <a href={proj.url}>
-                  <ShortResourceCard
-                    title={proj.frontmatter.title}
-                    date={proj.frontmatter.publishDate}
-                    description={proj.frontmatter.description}
-                  />
-                </a>
-              </article>
-            );
-          })}
-        </>
-      )
-    }
-  </main>
+<Layout title={title} description="LoyalPotato's projects">
+  <ArticleList title={title} resourceType="projects" />
 </Layout>

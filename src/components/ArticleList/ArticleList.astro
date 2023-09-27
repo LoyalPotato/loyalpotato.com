@@ -1,0 +1,65 @@
+---
+import type { ArticleFrontmatter } from "../../types/article";
+import NoResource from "../NoResource/NoResource.astro";
+import PageHeader from "../PageHeader/PageHeader.astro";
+import ShortResourceCard from "../ShortResourceCard/ShortResourceCard.astro";
+import "./ArticleList.less";
+
+export interface Props {
+  title: string;
+  resourceType: "projects" | "posts";
+}
+const { title, resourceType } = Astro.props;
+
+let articles = [];
+
+//NOTE: Glob pattern can't be a var: https://github.com/withastro/astro/issues/3418
+switch (resourceType) {
+  case "projects":
+    articles = await Astro.glob<ArticleFrontmatter>(
+      "../../pages/projects/*.{mdx,md}",
+    );
+    break;
+  case "posts":
+    articles = await Astro.glob<ArticleFrontmatter>(
+      "../../pages/blog/*.{mdx,md}",
+    );
+    break;
+  default:
+    return;
+}
+let sortedArticles = [];
+
+if (articles.length > 0) {
+  sortedArticles = articles.sort(
+    (a, b) =>
+      Date.parse(b.frontmatter.publishDate) -
+      Date.parse(a.frontmatter.publishDate),
+  );
+}
+---
+
+<main class="articles">
+  <PageHeader title={title} />
+  {
+    (articles.length === 1 && <NoResource resourceType={resourceType} />) || (
+      // Not sure why I need this fragment...
+      <>
+        {sortedArticles.map((proj) => {
+          if (proj.file.includes("empty.mdx")) return null;
+          return (
+            <article class="article-row">
+              <a href={proj.url}>
+                <ShortResourceCard
+                  title={proj.frontmatter.title}
+                  date={proj.frontmatter.publishDate}
+                  description={proj.frontmatter.description}
+                />
+              </a>
+            </article>
+          );
+        })}
+      </>
+    )
+  }
+</main>
