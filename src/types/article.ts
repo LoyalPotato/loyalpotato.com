@@ -1,4 +1,5 @@
-export interface ProjectFrontmatter {
+
+export interface ArticleFrontmatter {
   title: string;
   subtitle?: string;
   thumbnail?: string;

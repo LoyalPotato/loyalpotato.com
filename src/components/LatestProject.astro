@@ -1,11 +1,11 @@
 ---
 import "../styles/latest.less";
-import type { ProjectFrontmatter } from "../types/project";
+import type { ArticleFrontmatter } from "../types/article";
 import LinkableTitle from "./LinkableTitle/LinkableTitle.astro";
 import NoResource from "./NoResource/NoResource.astro";
 import ResourceCard from "./ResourceCard/ResourceCard.astro";
 
-const projects = await Astro.glob<ProjectFrontmatter>(
+const projects = await Astro.glob<ArticleFrontmatter>(
   "../pages/projects/*.mdx",
 );
 
