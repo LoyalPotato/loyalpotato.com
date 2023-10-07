@@ -1,11 +1,41 @@
 ---
+import type { ArticleFrontmatter } from "../../types/article";
 import LinkableTitle from "../LinkableTitle/LinkableTitle.astro";
 import NoResource from "../NoResource/NoResource.astro";
+import ResourceCard from "../ResourceCard/ResourceCard.astro";
 import "./LatestPosts.less";
-const posts = await Astro.glob("../../pages/blog/*.mdx");
+const posts = await Astro.glob<ArticleFrontmatter>("../../pages/blog/*.mdx");
+
+const sortedPosts = posts
+  .slice(0, 2)
+  .sort(
+    (a, b) =>
+      Date.parse(b.frontmatter.publishDate) -
+      Date.parse(a.frontmatter.publishDate),
+  );
 ---
 
 <div>
   <LinkableTitle id="latestPosts">Latest Posts</LinkableTitle>
-  {posts.length === 1 && <NoResource resourceType="posts" />}
+  {
+    (posts.length === 1 && <NoResource resourceType="posts" />) || (
+      <div class="latest-resource">
+        {sortedPosts.map((post) => {
+          if (post.file.includes("empty.mdx")) return null;
+          //TODO: Add a default thumbnail
+          return (
+            <a href={post.url}>
+              <ResourceCard
+                title={post.frontmatter.title}
+                subtitle={post.frontmatter.subtitle}
+                thumbnail={post.frontmatter.thumbnail || ""}
+                thumbnailAR={post.frontmatter.thumbnailAR?.replace("-", "/")}
+                description={post.frontmatter.description}
+              />
+            </a>
+          );
+        })}
+      </div>
+    )
+  }
 </div>
