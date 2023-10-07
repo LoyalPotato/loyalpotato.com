@@ -1,4 +1,5 @@
 ---
+import type { MDXInstance } from "astro";
 import type { ArticleFrontmatter } from "../../types/article";
 import NoResource from "../NoResource/NoResource.astro";
 import PageHeader from "../PageHeader/PageHeader.astro";
@@ -11,42 +12,44 @@ export interface Props {
 }
 const { title, resourceType } = Astro.props;
 
-let articles = [];
+let articles: MDXInstance<ArticleFrontmatter>[] = [];
 
 //NOTE: Glob pattern can't be a var: https://github.com/withastro/astro/issues/3418
 switch (resourceType) {
   case "projects":
     articles = await Astro.glob<ArticleFrontmatter>(
-      "../../pages/projects/*.{mdx,md}",
+      "../../pages/projects/*.mdx",
     );
     break;
   case "posts":
-    articles = await Astro.glob<ArticleFrontmatter>(
-      "../../pages/blog/*.{mdx,md}",
-    );
+    articles = await Astro.glob<ArticleFrontmatter>("../../pages/blog/*.mdx");
     break;
   default:
     return;
 }
-let sortedArticles = [];
+
+let sortedArticles: MDXInstance<ArticleFrontmatter>[] = [];
 
 if (articles.length > 0) {
-  sortedArticles = articles.sort(
-    (a, b) =>
-      Date.parse(b.frontmatter.publishDate) -
-      Date.parse(a.frontmatter.publishDate),
-  );
+  sortedArticles = articles
+    .filter((a) => !a.file.includes("empty.mdx") && !a.frontmatter.draft)
+    .sort(
+      (a, b) =>
+        Date.parse(b.frontmatter.publishDate) -
+        Date.parse(a.frontmatter.publishDate),
+    );
 }
 ---
 
 <main class="articles">
   <PageHeader title={title} />
   {
-    (articles.length === 1 && <NoResource resourceType={resourceType} />) || (
+    (sortedArticles.length === 0 && (
+      <NoResource resourceType={resourceType} />
+    )) || (
       // Not sure why I need this fragment...
       <>
         {sortedArticles.map((proj) => {
-          if (proj.file.includes("empty.mdx")) return null;
           return (
             <article class="article-row">
               <a href={proj.url}>
