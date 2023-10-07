@@ -2,18 +2,28 @@
 import "./ResourceCard.less";
 
 export interface Props {
-  thumbnail: string;
+  thumbnail?: string;
+  thumbnailAR?: string;
   title: string;
   subtitle?: string;
   description?: string;
 }
 
-const { thumbnail, title, subtitle, description } = Astro.props;
+const { thumbnail, thumbnailAR, title, subtitle, description } = Astro.props;
 ---
 
 <article class="resource-card-container">
   <div class="resource-card-img-container">
-    <img class="resource-card__img" src={thumbnail} alt={title} />
+    {
+      thumbnail && (
+        <img
+          class="resource-card__img"
+          style={`aspect-ratio: ${thumbnailAR}`}
+          src={thumbnail}
+          alt={title}
+        />
+      )
+    }
     <div class="resource-card-titles-container">
       <h1 class="resource-card__title">{title}</h1>
       {subtitle && <h3 class="resource-card__subtitle">{subtitle}</h3>}
