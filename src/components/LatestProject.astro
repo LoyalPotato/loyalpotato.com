@@ -32,6 +32,7 @@ const sortedProj = projects
                 title={proj.frontmatter.title}
                 subtitle={proj.frontmatter.subtitle}
                 thumbnail={proj.frontmatter.thumbnail || ""}
+                thumbnailAR={proj.frontmatter.thumbnailAR?.replace("-", "/")}
                 description={proj.frontmatter.description}
               />
             </a>
