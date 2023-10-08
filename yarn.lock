@@ -762,6 +762,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.43.0
     "@vercel/analytics": ^0.1.5
     astro: ^3.2.3
+    astro-robots: ^1.0.2
     eslint: ^8.27.0
     eslint-plugin-astro: ^0.29.1
     eslint-plugin-import: ^2.26.0
@@ -1567,6 +1568,13 @@ __metadata:
     espree: ^9.0.0
     semver: ^7.3.8
   checksum: 1ce6250240d5400151b62f66d0239c2571ce11316d80aa1259bc04f78f73a2866c5017439a41d058a2fe43db6982b8eae8e151f806cdb8757045c16a94ed468c
+  languageName: node
+  linkType: hard
+
+"astro-robots@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "astro-robots@npm:1.0.2"
+  checksum: 68b70be119f8f0e04365e77eaab986e1e3a13641f6913759a70ba0e84c90f577a4bd22243341e340880bb580c5bfd8bc4d815f251b95bebc87f1fcf5cc8b8f03
   languageName: node
   linkType: hard
 
