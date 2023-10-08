@@ -15,6 +15,7 @@
     "@astrojs/sitemap": "^3.0.1",
     "@vercel/analytics": "^0.1.5",
     "astro": "^3.2.3",
+    "astro-robots": "^1.0.2",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
