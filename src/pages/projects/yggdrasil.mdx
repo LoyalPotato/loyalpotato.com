@@ -4,12 +4,12 @@ title: "Yggdrasil"
 subtitle: "My first custom keyboard, 36% layout" 
 description: "Ride along through the journey that I went through to get my first keyboard designed, assembled and fully working."
 publishDate: "15 October 2022"
-thumbnail: "src/assets/images/projects/yggdrasil/thumbnail.jpg"
+thumbnail: "/images/projects/yggdrasil/thumbnail.jpg"
 thumbnailAR: "16-9"
 ---
 import Link from "../../components/Link/Link.astro"
 import LinkableTitle from "../../components/LinkableTitle/LinkableTitle.astro"
-import { Image } from "@astrojs/image/components"
+import { Image } from "astro:assets"
 
 import fingerPaint from "../../assets/images/projects/yggdrasil/finger_paint.jpg"
 
@@ -72,7 +72,7 @@ So far so good and little ol' me was just looking at these things purely for how
 The first thing I had to decide was how the layout was going to be and how many keys I wanted. I looked into another of Ben's video in which he has this section in which he paints his fingers and sees how they span. So I tried it myself and I got this result:
 
 <div class="article-img-container">
-  <Image src={fingerPaint} alt="Finger painting of finger span" aspectRatio="16/9" width="750" loading="lazy" class="article__img"/>
+  <Image src={fingerPaint} alt="Finger painting of finger span" width="750" loading="lazy" class="article__img"/>
 </div>
 
 I made some rough measurements so I had some idea of the dimensions of the keyboard.
@@ -97,7 +97,7 @@ It shows how the switches, diodes and micro-controller are connected. Besides th
 Here's how it looks:
 
 <div class="article-img-container">
-  <Image src={yggSchematics} alt="Schematics for the pcb" aspectRatio="16/9" width="750" loading="lazy" class="article__img"/>
+  <Image src={yggSchematics} alt="Schematics for the pcb" width="750" loading="lazy" class="article__img"/>
 </div>
 
 Then with this schematic you go into the PCB designer of kicad and there you will have the footprints <small>(which are sort of blueprints for certain components)</small> unorganized.
@@ -106,19 +106,19 @@ My goal here is not to teach how to design/wire up the PCB. There are great guid
 
 
 <div class="article-img-container">
-  <Image src={yggConnections} alt="Connections for pcb" aspectRatio="16/9" width="750" loading="lazy" class="article__img"/>
+  <Image src={yggConnections} alt="Connections for pcb" width="750" loading="lazy" class="article__img"/>
 </div>
 
 The 3d view of the same PCB, in Kicad:
 
 <div class="article-img-container">
-  <Image src={yggPcb} alt="3d view of pcb" aspectRatio="16/9" width="750" loading="lazy" class="article__img"/>
+  <Image src={yggPcb} alt="3d view of pcb" width="750" loading="lazy" class="article__img"/>
 </div>
 
 And finally the physical PCB, ordered from JLCPCB, but there are many others out there as well:
 
 <div class="article-img-container">
-  <Image src={yggRealPcb} alt="Physical pcb" aspectRatio="16/9" width="750" loading="lazy" class="article__img"/>
+  <Image src={yggRealPcb} alt="Physical pcb" width="750" loading="lazy" class="article__img"/>
 </div>
 
 

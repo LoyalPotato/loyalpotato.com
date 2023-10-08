@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import "./ResourceCard.less";
 
 export interface Props {
@@ -23,7 +23,7 @@ const { thumbnail, thumbnailAR, title, subtitle, description } = Astro.props;
           src={thumbnail}
           alt={title}
           width="250"
-          aspectRatio={thumbnailAR?.replace("-", "/")}
+          height="210"
         />
       )
     }
