@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import profilePic from "../../assets/images/profile_human.png";
 import Experiences from "../../components/Experiences/Experiences.astro";
 import Link from "../../components/Link/Link.astro";
@@ -19,7 +19,6 @@ import "./about.less";
         alt="My picture"
         src={profilePic}
         width="450"
-        aspectRatio="450/523"
         loading="eager"
       />
     </div>
