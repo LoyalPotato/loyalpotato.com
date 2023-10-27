@@ -5,7 +5,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://loyalpotato.dev/",
+  site: "https://loyalpotato.com/",
   integrations: [mdx(), sitemap(getSidemapConfig()), robots()]
 });
 
