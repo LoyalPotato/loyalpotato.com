@@ -6,10 +6,10 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   site: "https://loyalpotato.com/",
-  integrations: [mdx(), sitemap(getSidemapConfig()), robots()]
+  integrations: [mdx(), sitemap(getSitemapConfig()), robots()]
 });
 
-function getSidemapConfig() {
+function getSitemapConfig() {
   return {
     filter: (page) => !page.endsWith("/empty/")
   }
