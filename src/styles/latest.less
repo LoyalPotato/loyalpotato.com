@@ -1,7 +1,7 @@
 .latest-resource {
   display: flex;
   flex-flow: row wrap;
-  row-gap: 1rem;
+  gap: var(--card-gap);
   justify-content: flex-start;
 
   a {
@@ -11,5 +11,9 @@
     &:active {
       text-decoration: none;
     }
+  }
+
+  @media screen and (max-width: 636px) {
+    justify-content: center;
   }
 }
