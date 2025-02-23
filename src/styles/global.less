@@ -48,6 +48,10 @@
   /* Border */
 
   --border-radius: 0.6rem;
+
+  --card-max-width: 25rem;
+  --card-gap: 2rem;
+  --num-of-cards: 3;
 }
 
 * {
@@ -114,8 +118,9 @@ code {
 .center-wrapper {
   margin: auto;
   margin-bottom: 4rem;
-  padding: 0 1.5rem;
-  max-width: 1000px;
+  --center-wrapper-h-pad: 1.5rem;
+  padding: 0 var(--center-wrapper-h-pad);
+  max-width: calc(var(--center-wrapper-h-pad) * 2 + var(--card-gap) * (var(--num-of-cards) - 1) + var(--card-max-width) * var(--num-of-cards));
 }
 
 p {
