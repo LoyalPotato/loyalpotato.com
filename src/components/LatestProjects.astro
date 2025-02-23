@@ -10,15 +10,17 @@ const projects = await Astro.glob<ArticleFrontmatter>(
 );
 
 const sortedProj = projects
-  .slice(0, 2)
+  .slice(0, 4)
   .sort(
     (a, b) =>
       Date.parse(b.frontmatter.publishDate) -
       Date.parse(a.frontmatter.publishDate),
   );
+
+console.log(sortedProj)
 ---
 
-<div>
+<div class="latest-title">
   <LinkableTitle id="latestProject">Latest Project</LinkableTitle>
   {
     (projects.length === 1 && <NoResource resourceType="projects" />) || (
