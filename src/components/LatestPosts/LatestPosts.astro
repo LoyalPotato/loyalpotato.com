@@ -7,7 +7,7 @@ import "./LatestPosts.less";
 const posts = await Astro.glob<ArticleFrontmatter>("../../pages/blog/*.mdx");
 
 const sortedPosts = posts
-  .slice(0, 2)
+  .slice(0, 4)
   .sort(
     (a, b) =>
       Date.parse(b.frontmatter.publishDate) -
